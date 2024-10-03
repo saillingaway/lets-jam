@@ -6,3 +6,12 @@ source /Users/your/path/here/cbbb.sh
 echo $TODAYS_MSG 
 ```
 
+You can also wrap in conditionals or adjust application settings if you want to show or hide this message based on what kind of shell is running.
+
+```
+# example: don't print the message if the new shell is an integrated vscode terminal
+if ![ "$TERM_PROGRAM" = "vscode" ]; then
+	source /Users/your/path/here/cbbb.sh
+	echo $TODAYS_MSG
+fi
+```
